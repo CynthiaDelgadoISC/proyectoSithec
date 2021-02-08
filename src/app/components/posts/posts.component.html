@@ -1,0 +1,27 @@
+<app-navbar></app-navbar> 
+<div class="container-12 p-3 " >
+    <div class="row abs-center">
+      <div class="card bg-dark mt-3 p-3 w-75 text-light centrado" *ngFor="let post of posts; let i = index" >
+        <h5> Titulo: {{post.title}}</h5>
+        <p>{{post.body}}</p>
+        <ng-container *ngFor="let user of users">
+          <ng-container *ngIf="user.id==post.userId">
+            <p class="text-right "><i class="far fa-user"> <a [routerLink]="['/user',user.id]" > {{user.name}}</a></i>
+            </p>
+          </ng-container>
+        </ng-container>
+        <button class="btn btn-outline-light" (click)="showComments(post.id, i)">Comentarios</button>
+        <ng-container *ngIf="band_comment[i]">
+          <div class="card bg-light m-4 p-3 text-dark " *ngIf="comments.length!=0; else noComments">
+            <div *ngFor="let comment of comments">
+              <p><b>{{comment.name}}</b></p>
+              <p>{{comment.body}}</p>
+              <p class="text-muted text-right">by- {{comment.email}}</p>
+              <hr>
+            </div>
+          </div>
+          <ng-template #noComments><p>No hay Comentarios</p></ng-template>
+        </ng-container>
+      </div>
+    </div>
+</div>

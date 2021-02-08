@@ -1,0 +1,37 @@
+<app-navbar></app-navbar> 
+<div class="container-12 p-3  ">
+    <div class="row abs-center " *ngIf="band_conf && flagUser; else noUser">
+      <div class="card  p-3 ml-md-4 mr-md-4 ml-1 mr-1" >
+        <div class="col-12 card-header">
+          <img src="../../assets/photo_user.png" alt="...">
+          <h2>{{user.username}}</h2>
+          <h5>ID: {{user.id}}</h5>
+        </div>
+        <div class="row p-3 ">
+          <div class="col-12 col-md-6">
+            <p><b>Información Personal:</b></p>
+            <p><small>Nombre: {{user.name}}</small></p>
+            <p><small>Email: {{user.email}}</small></p>
+            <p><small>Telefono: {{user.phone}}</small></p>
+            <p><small>Sitio Web: {{user.website}}</small></p>
+          </div>
+          <div class="col-12 col-md-6">
+            <p><b>Dirección:</b></p>
+            <p><small>Ciudad: {{user.address.city}}</small> </p>
+            <small class="text-muted">Lat:{{user.address.geo.lat}} Lng:{{user.address.geo.lng}}</small>
+            <p><small> Calle: {{user.address.street}}</small> </p>
+            <p><small> Suite: {{user.address.suite}}</small> </p>
+            <p><small> Zipcode: {{user.address.zipcode}}</small> </p>
+          </div>
+        </div>
+        <div class="col-12 posts">
+          <h4 class="mt-3 text-light">Publicaciones</h4>
+          <div class="card bg-dark  m-1 p-3  text-light" *ngFor="let post of posts">
+            <p> <b>{{post.title}} </b> </p>
+            <p>{{post.body}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noUser><h4>No se encontro usuario</h4></ng-template>
+  </div>

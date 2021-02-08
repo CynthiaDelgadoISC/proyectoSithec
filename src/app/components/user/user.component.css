@@ -1,0 +1,24 @@
+  
+.container-12{
+    text-align: center;
+}
+
+.abs-center {
+    display: flex;        
+    justify-content: center;
+}
+
+img{
+    width: 100px;
+}
+
+p{
+    margin: 0px;
+}
+
+h4{
+    padding: 50px;
+}
+.posts{
+   background-color: rgba(0, 77, 77, 0.541);
+}
