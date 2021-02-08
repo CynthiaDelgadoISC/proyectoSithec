@@ -1,7 +1,7 @@
-<app-navbar></app-navbar> 
 <div class="container-12 p-3 " >
     <div class="row abs-center">
-      <div class="card bg-dark mt-3 p-3 w-75 text-light centrado" *ngFor="let post of posts; let i = index" >
+      <div class="col-12">
+      <div class="card bg-dark mt-4 p-3 w-75 text-light centrado zoom" *ngFor="let post of posts; let i = index" >
         <h5> Titulo: {{post.title}}</h5>
         <p>{{post.body}}</p>
         <ng-container *ngFor="let user of users">
@@ -22,6 +22,7 @@
           </div>
           <ng-template #noComments><p>No hay Comentarios</p></ng-template>
         </ng-container>
+      </div>
       </div>
     </div>
 </div>

@@ -6,3 +6,8 @@
 a{
     color: rgb(16, 187, 187);
 }
+
+.zoom:hover {
+    -webkit-transform:scale(1.04);
+    transform:scale(1.04);
+}

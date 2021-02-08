@@ -22,3 +22,9 @@ h4{
 .posts{
    background-color: rgba(0, 77, 77, 0.541);
 }
+
+
+.zoom:hover {
+    -webkit-transform:scale(.9);
+    transform:scale(.9);
+}

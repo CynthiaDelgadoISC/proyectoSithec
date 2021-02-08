@@ -14,6 +14,6 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Usuario ID" aria-label="Search" #searchUser (keyup.enter)="searchUserId(searchUser.value)">
         <button class="btn btn-outline-info my-2 my-sm-0" type="submit" (click)="searchUserId(searchUser.value)">Buscar</button>
       </form>
-      <button class="btn btn-outline-light m-4 my-sm-0" (click)="exit()" >Cerrar Sesion</button>
+      <button class="btn btn-outline-light m-4 my-sm-0" (click)="exit()" *ngIf="flagUser"  type="submit" >Cerrar Sesion</button>
     </div>
   </nav>

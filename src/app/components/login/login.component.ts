@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthGuardService } from 'src/app/services/authGuard.service';
 import Swal from 'sweetalert2';
 import {environment} from '../../../environments/environment';
 
@@ -11,7 +12,7 @@ import {environment} from '../../../environments/environment';
 })
 export class LoginComponent implements OnInit {
   public formLogin: FormGroup;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: AuthGuardService) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -27,6 +28,7 @@ export class LoginComponent implements OnInit {
   login(){
     if(users[this.formLogin.get('email').value]==this.formLogin.get('password').value){
       environment.userLogin=true;
+      this.auth.isLogin();
       this.router.navigate(['/posts']);
     }
     else{
